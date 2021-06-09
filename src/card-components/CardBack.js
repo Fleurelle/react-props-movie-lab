@@ -15,7 +15,6 @@ export default class CardBack extends Component {
   }
 
   render() {
-    console.log(this.props.genres)
     return (
       <div className="card-back">
         <h3 className="title">{this.props.title}</h3>
