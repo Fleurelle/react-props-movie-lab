@@ -6,7 +6,7 @@ import three from '../assets/stars/3-stars.png'
 import four from '../assets/stars/4-stars.png'
 import five from '../assets/stars/5-stars.png'
 
-const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
+const imgMapper = { 0: zero, 1: one, 2: two, 3: three, 4: four, 5: five }
 
 export default class CardBack extends Component {
 
@@ -15,11 +15,18 @@ export default class CardBack extends Component {
   }
 
   render() {
+    console.log(this.props.genres)
     return (
       <div className="card-back">
-        <h3 className="title"></h3>
+        <h3 className="title">{this.props.title}</h3>
+        <small>{this.props.genres.join(', ')}</small>
         <span />
-        { /* your rating element should go here -- you can invoke methods within JSX, à la: this.myMethod() */ }
+        if (IMDBRating == null){
+          <h4>No Rating Found</h4>
+        }else {
+          <img src={imgMapper[this.prop]} alt="" />
+        }
+        { /* your rating element should go here -- you can invoke methods within JSX, à la: this.myMethod() */}
         <span />
         <h5 className="genres"></h5>
       </div>
